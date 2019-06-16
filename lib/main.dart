@@ -4,6 +4,7 @@ import 'package:english_words/english_words.dart';
 import 'package:first_flutter_app/Lifecycle.dart';
 import 'StateManager.dart';
 import 'package:first_flutter_app/SuperManageChildState.dart';
+import 'package:first_flutter_app/BaseWidget.dart';
 // 应用程序入口
 void main() => runApp(MyApp());
 
@@ -72,8 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("State 的生命周期"),
               textColor: Colors.blue,
             ),
-            FlatButton(
-              onPressed: (){
+            FlatButton(onPressed: (){
                 // 导航到新的路由
                 Navigator.push(context, new MaterialPageRoute(builder: (context){
                   return new StatemanagerPage();
@@ -87,7 +87,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 return new SuperManageChildStatePage();
               }));
             }, child: Text("父 widget 管理 子 widget 的状态")),
-
+            FlatButton(onPressed: (){
+              Navigator.push(context, new MaterialPageRoute(builder: (context){
+                return new BaseWidget();
+              }));
+            }, child: Text("基础 Widget")),
             FlatButton(
               onPressed: (){
                 // 通过路由的名称打开新的路由页面
