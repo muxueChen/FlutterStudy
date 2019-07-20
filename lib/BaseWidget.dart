@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'TextWidget.dart';
 import 'ButtonWidget.dart';
 import 'ImageWidget.dart';
+import 'SwitchAndCheckBoxTestRoute.dart';
+import 'TextFieldWidget.dart';
+import 'FocusTestRoute.dart';
+import 'FormTestRoutePage.dart';
 
 class BaseWidget extends StatelessWidget {
   @override
@@ -45,14 +49,24 @@ class BaseWidgetPageState extends State <BaseWidgetPage> {
           }, child: Text("图片和Icon", style: TextStyle(color: Colors.blue)),),
           FlatButton(onPressed: (){
             Navigator.push(context, new MaterialPageRoute(builder: (context){
-             return new ImageWidgetPage();
+             return new SwitchAndCheckBoxTestPage();
             }));
           }, child: Text("单选框和复选框", style: TextStyle(color: Colors.blue)),),
           FlatButton(onPressed: (){
             Navigator.push(context, new MaterialPageRoute(builder: (context){
-//              return
+             return new TextFieldPage();
             }));
           }, child: Text("输入框和表单", style: TextStyle(color: Colors.blue),),),
+           FlatButton(onPressed: (){
+            Navigator.push(context, new MaterialPageRoute(builder: (context){
+             return new FocusTestRoutePage();
+            }));
+          }, child: Text("输入框焦点控制", style: TextStyle(color: Colors.blue),),),
+           FlatButton(onPressed: (){
+            Navigator.push(context, new MaterialPageRoute(builder: (context){
+             return new FormTestRoutePage();
+            }));
+          }, child: Text("form 表单测试", style: TextStyle(color: Colors.blue),),)
         ],
       ),),
     );
